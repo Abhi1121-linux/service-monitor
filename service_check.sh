@@ -12,7 +12,7 @@ services=(
 
 # Store logs in your home directory
 
-log_file="$HOME/service_health_check.log"
+logfile="/tmp/service_status.log"
 
 echo "----------- Health check started at $(date) -----------" >> "$log_file"
 for service in "${services[@]}";do
