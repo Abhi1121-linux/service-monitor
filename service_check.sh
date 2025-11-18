@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # your services to monitor
-
 services=(
     "nginx"
     "mysql"
@@ -9,11 +8,8 @@ services=(
     "ssh"
     "jenkins"
 )
-
 # Store logs in your home directory
-
 logfile="/tmp/service_status.log"
-
 echo "----------- Health check started at $(date) -----------" >> "$log_file"
 for service in "${services[@]}";do
    if systemctl is-active --quiet "$service"; then
@@ -25,7 +21,6 @@ for service in "${services[@]}";do
             # Optional auto-restart:
             # systemctl restart "$service"
             # echo "$(date) - $service RESTARTED" >> "$logfile"
-    fi 
+    fi
 done
-
 echo "----------- Health check Completed -----------" >> "$lofile"
